@@ -4,10 +4,13 @@ using TMPro;
 
 public class MiniGameManager : MonoBehaviour
 {
+    public Team.NPCController npcController;
+
     // 遊戲名稱清單
     private string[] miniGames = { "猜拳", "猜數字" };
 
     // 通用 UI 元素
+    public Image gametext_background;
     public TMP_Text dialogBoxText; // 用於顯示對話框內容
     public Button startGameButton; // 開始遊戲按鈕
     public Button restartButton; // 重新開始按鈕
@@ -31,7 +34,7 @@ public class MiniGameManager : MonoBehaviour
     void Start()
     {
         // 隱藏所有遊戲相關 UI
-        HideAllUI();
+        HIdeAllUI();
 
         // 隱藏開始按鈕，等待選擇遊戲
         startGameButton.gameObject.SetActive(false);
@@ -48,6 +51,7 @@ public class MiniGameManager : MonoBehaviour
         int randomIndex = Random.Range(0, miniGames.Length);
         selectedGame = miniGames[randomIndex];
 
+        gametext_background.gameObject.SetActive(true);
         ShowtextUI();
 
         // 更新對話框文字
@@ -101,10 +105,12 @@ public class MiniGameManager : MonoBehaviour
                  (playerChoice == "布" && npcChoice == "石頭"))
         {
             result = "你贏了！";
+            npcController.PlayAinmation(4);
         }
         else
         {
             result = "你輸了！";
+            npcController.PlayAinmation(1);
         }
 
         dialogBoxText.text = $"你選擇了：{playerChoice}，NPC 選擇了：{npcChoice}。\n結果：{result}";
@@ -127,6 +133,9 @@ public class MiniGameManager : MonoBehaviour
         inputField.gameObject.SetActive(true);
         submitButton.gameObject.SetActive(true);
 
+        restartButton.gameObject.SetActive(true);
+        exitButton.gameObject.SetActive(true);
+
         // 綁定提交按鈕事件
         submitButton.onClick.RemoveAllListeners();
         submitButton.onClick.AddListener(PlayNumberGuessing);
@@ -141,14 +150,17 @@ public class MiniGameManager : MonoBehaviour
             if (playerGuess < targetNumber)
             {
                 dialogBoxText.text = "太小了！再試一次。";
+                npcController.PlayAinmation(4);
             }
             else if (playerGuess > targetNumber)
             {
                 dialogBoxText.text = "太大了！再試一次。";
+                npcController.PlayAinmation(4);
             }
             else
             {
                 dialogBoxText.text = "恭喜你，猜對了！";
+                npcController.PlayAinmation(2);
 
                 // 顯示重新開始與結束按鈕
                 restartButton.gameObject.SetActive(true);
@@ -201,10 +213,12 @@ public class MiniGameManager : MonoBehaviour
         inputField.gameObject.SetActive(false);
         submitButton.gameObject.SetActive(false);
         dialogBoxText.gameObject.SetActive(false);
+        gametext_background.gameObject.SetActive(false);
     }
 
     private void ShowtextUI()
     {
         dialogBoxText.gameObject.SetActive(true);
+        gametext_background.gameObject.SetActive(true);
     }
 }
