@@ -184,8 +184,32 @@ public class MiniGameManager : MonoBehaviour
     // 重新開始遊戲
     private void RestartGame()
     {
+        // 隱藏所有遊戲相關 UI
         HideAllUI();
-        dialogBoxText.text = "請選擇一個小遊戲開始。";
+
+        // 隨機選擇一個遊戲
+        int randomIndex = Random.Range(0, miniGames.Length);
+        selectedGame = miniGames[randomIndex];
+
+        // 更新對話框文字
+        dialogBoxText.text = $"重新挑選的遊戲是：{selectedGame}";
+
+        // 顯示對話框背景和文字
+        ShowtextUI();
+
+        // 顯示開始按鈕
+        startGameButton.gameObject.SetActive(true);
+
+        // 綁定相應的遊戲邏輯
+        startGameButton.onClick.RemoveAllListeners();
+        if (selectedGame == "猜拳")
+        {
+            startGameButton.onClick.AddListener(StartRockPaperScissors);
+        }
+        else if (selectedGame == "猜數字")
+        {
+            startGameButton.onClick.AddListener(StartNumberGuessing);
+        }
     }
 
     // 結束遊戲
