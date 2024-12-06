@@ -12,6 +12,7 @@ public class MiniGameManager : MonoBehaviour
     // 通用 UI 元素
     public Image gametext_background;
     public TMP_Text dialogBoxText; // 用於顯示對話框內容
+    public Button minigameopen;
     public Button startGameButton; // 開始遊戲按鈕
     public Button restartButton; // 重新開始按鈕
     public Button exitButton; // 結束遊戲按鈕
@@ -31,6 +32,9 @@ public class MiniGameManager : MonoBehaviour
     private int minRange = 1; // 猜數字範圍最小值
     private int maxRange = 100; // 猜數字範圍最大值
 
+    public Button chat;
+    public Button interact;
+
     void Start()
     {
         // 隱藏所有遊戲相關 UI
@@ -47,6 +51,10 @@ public class MiniGameManager : MonoBehaviour
     // 隨機選取小遊戲
     public void OnMiniGameButtonClicked()
     {
+        interact.gameObject.SetActive(false);
+        chat.gameObject.SetActive(false);
+        minigameopen.gameObject.SetActive(false);
+
         // 隨機選擇一個遊戲
         int randomIndex = Random.Range(0, miniGames.Length);
         selectedGame = miniGames[randomIndex];
@@ -183,6 +191,10 @@ public class MiniGameManager : MonoBehaviour
     // 結束遊戲
     private void ExitGame()
     {
+        interact.gameObject.SetActive(true);
+        chat.gameObject.SetActive(true);
+        minigameopen.gameObject.SetActive(true);
+
         Application.Quit();
         HIdeAllUI();
     }

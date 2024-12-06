@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class llmController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class llmController : MonoBehaviour
     public TMP_Text responseText; // 用於顯示 AI 回覆的文字
     public Image responseBackground; // 回覆文字的背景
     public Button exitButton; // 離開對話的按鈕
+
+    public Button smallgame;
+    public Button interact;
 
     void Start()
     {
@@ -31,6 +35,9 @@ public class llmController : MonoBehaviour
     // 開啟對話框
     private void OpenDialog()
     {
+        interact.gameObject.SetActive(false);
+        smallgame.gameObject.SetActive(false);
+
         dialogBox.SetActive(true);
         openDialogButton.gameObject.SetActive(false); // 隱藏啟動按鈕
         exitButton.gameObject.SetActive(true); // 顯示離開按鈕
@@ -39,6 +46,9 @@ public class llmController : MonoBehaviour
     // 關閉對話框
     private void CloseDialog()
     {
+        interact.gameObject.SetActive(true);
+        smallgame.gameObject.SetActive(true);
+
         dialogBox.SetActive(false);
         responseText.gameObject.SetActive(false); // 隱藏回覆文字
         responseBackground.gameObject.SetActive(false); // 隱藏背景
