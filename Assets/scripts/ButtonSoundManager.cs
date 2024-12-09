@@ -6,6 +6,8 @@ public class ButtonSoundManager : MonoBehaviour
     public AudioClip buttonClickSound; // 預設的按鈕點擊音效
     public AudioClip muteClickSound;   // 禁音按鈕的音效
     public AudioClip unmuteClickSound; // 取消禁音按鈕的音效
+    public AudioClip opening;
+    public AudioClip start;
     private AudioSource audioSource;
 
     private void Awake()
@@ -29,6 +31,14 @@ public class ButtonSoundManager : MonoBehaviour
             else if (button.name == "ButtonForUnmute")
             {
                 button.onClick.AddListener(() => PlayButtonClickSound(unmuteClickSound));
+            }
+            else if (button.name == "openingButton")
+            {
+                button.onClick.AddListener(() => PlayButtonClickSound(opening));
+            }
+            else if (button.name == "letsstart")
+            {
+                button.onClick.AddListener(() => PlayButtonClickSound(start));
             }
             else
             {

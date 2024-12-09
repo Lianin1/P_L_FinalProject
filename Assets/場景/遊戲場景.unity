@@ -2026,6 +2026,7 @@ MonoBehaviour:
   dialogTextBox: {fileID: 445562854}
   startGameButton: {fileID: 581804020}
   nextButton: {fileID: 412377980}
+  npcController: {fileID: 485327025}
   fucBack: {fileID: 1636067776}
   game: {fileID: 411448436}
   chat: {fileID: 1194861403}
@@ -2294,7 +2295,7 @@ GameObject:
   - component: {fileID: 412377981}
   - component: {fileID: 412377980}
   m_Layer: 5
-  m_Name: Button
+  m_Name: openingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3668,7 +3669,7 @@ GameObject:
   - component: {fileID: 581804018}
   - component: {fileID: 581804020}
   m_Layer: 5
-  m_Name: start
+  m_Name: letsstart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7036,13 +7037,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 57267931}
   - {fileID: 1636067774}
   - {fileID: 755151278}
   - {fileID: 863008526}
   - {fileID: 155657823}
   - {fileID: 215035427}
   - {fileID: 2005573140}
+  - {fileID: 57267931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11047,6 +11048,8 @@ MonoBehaviour:
   buttonClickSound: {fileID: 8300000, guid: 7a4c4b5d7ffae4646b53e27c39ffc487, type: 3}
   muteClickSound: {fileID: 8300000, guid: 0db8862b7fe5bfa449b0f993e1fff825, type: 3}
   unmuteClickSound: {fileID: 8300000, guid: c230389cdba1a4d47bda71c4d0e2b6f9, type: 3}
+  opening: {fileID: 8300000, guid: 2e1c0edfc97324f3cbdc4ed5f343753b, type: 3}
+  start: {fileID: 8300000, guid: c155828b70c1b4c8bab378079dc99c56, type: 3}
 --- !u!1001 &1871679525
 PrefabInstance:
   m_ObjectHideFlags: 0

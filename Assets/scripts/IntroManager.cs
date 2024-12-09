@@ -9,6 +9,8 @@ public class IntroManager : MonoBehaviour
     public Button startGameButton; // 新按鈕（最後顯示用）
     public Button nextButton; // 按鈕
 
+    public Team.NPCController npcController;
+
     public Image fucBack;
     public Button game;
     public Button chat;
@@ -51,6 +53,8 @@ public class IntroManager : MonoBehaviour
 
     void ShowNextText()
     {
+        PlayAnimationForTextIndex(currentTextIndex);
+
         currentTextIndex++;
 
         // 如果到達最後一段文字，切換按鈕
@@ -63,6 +67,8 @@ public class IntroManager : MonoBehaviour
         // 顯示當前文字
         dialogTextBox.text = introTexts[currentTextIndex];
     }
+
+
 
     void EnterMainGame()
     {
@@ -79,6 +85,29 @@ public class IntroManager : MonoBehaviour
         volume.gameObject.SetActive(true);
         fucBack.gameObject.SetActive(true);
         exit.gameObject.SetActive(true);
+    }
+
+    void PlayAnimationForTextIndex(int currentTextIndex)
+    {
+        // 根據文字索引播放對應動畫
+        switch (currentTextIndex)
+        {
+            case 0:
+                npcController.PlayAinmation(0);
+                break;
+            case 2:
+                npcController.PlayAinmation(1);
+                break;
+            case 4:
+                npcController.PlayAinmation(2);
+                break;
+            case 6:
+                npcController.PlayAinmation(1);
+                break;
+            case 8:
+                npcController.PlayAinmation(5);
+                break;
+        }
     }
 
     void HideAllUI()
