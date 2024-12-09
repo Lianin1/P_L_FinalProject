@@ -32,6 +32,7 @@ public class MiniGameManager : MonoBehaviour
     private int minRange = 1; // 猜數字範圍最小值
     private int maxRange = 100; // 猜數字範圍最大值
 
+    public Image fucBack;
     public Button chat;
     public Button interact;
 
@@ -53,6 +54,7 @@ public class MiniGameManager : MonoBehaviour
     {
         interact.gameObject.SetActive(false);
         chat.gameObject.SetActive(false);
+        fucBack.gameObject.SetActive(false);
         minigameopen.gameObject.SetActive(false);
 
         // 隨機選擇一個遊戲
@@ -121,7 +123,7 @@ public class MiniGameManager : MonoBehaviour
             npcController.PlayAinmation(1);
         }
 
-        dialogBoxText.text = $"你選擇了：{playerChoice}，NPC 選擇了：{npcChoice}。\n結果：{result}";
+        dialogBoxText.text = $"你選擇了：{playerChoice}，小狐狸 選擇了：{npcChoice}。\n結果：{result}";
 
         // 顯示重新開始與結束按鈕
         restartButton.gameObject.SetActive(true);
@@ -218,6 +220,7 @@ public class MiniGameManager : MonoBehaviour
         interact.gameObject.SetActive(true);
         chat.gameObject.SetActive(true);
         minigameopen.gameObject.SetActive(true);
+        fucBack.gameObject.SetActive(true);
 
         Application.Quit();
         HIdeAllUI();

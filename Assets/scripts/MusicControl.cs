@@ -20,7 +20,6 @@ public class MusicControl : MonoBehaviour
         preVolume = audioSource.volume;
 
         // 初始化顯示按鈕
-        buttonForMute.gameObject.SetActive(true);
         buttonForUnmute.gameObject.SetActive(false);
     }
 

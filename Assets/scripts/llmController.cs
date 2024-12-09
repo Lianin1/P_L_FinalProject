@@ -13,6 +13,7 @@ public class llmController : MonoBehaviour
     public Image responseBackground; // 回覆文字的背景
     public Button exitButton; // 離開對話的按鈕
 
+    public Image fucBack;
     public Button smallgame;
     public Button interact;
 
@@ -37,6 +38,7 @@ public class llmController : MonoBehaviour
     {
         interact.gameObject.SetActive(false);
         smallgame.gameObject.SetActive(false);
+        fucBack.gameObject.SetActive(false);
 
         dialogBox.SetActive(true);
         openDialogButton.gameObject.SetActive(false); // 隱藏啟動按鈕
@@ -48,6 +50,7 @@ public class llmController : MonoBehaviour
     {
         interact.gameObject.SetActive(true);
         smallgame.gameObject.SetActive(true);
+        fucBack.gameObject.SetActive(true);
 
         dialogBox.SetActive(false);
         responseText.gameObject.SetActive(false); // 隱藏回覆文字

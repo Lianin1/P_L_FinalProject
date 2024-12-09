@@ -17,6 +17,7 @@ public class ButtonAndAnimationManager : MonoBehaviour
 
     public Button smallgame;
     public Button chat;
+    public Image fucBack;
 
     private void Start()
     {
@@ -56,6 +57,7 @@ public class ButtonAndAnimationManager : MonoBehaviour
 
         smallgame.gameObject.SetActive(false);
         chat.gameObject.SetActive(false);
+        fucBack.gameObject.SetActive(false);
     }
 
     private void OnExitButtonClick()
@@ -72,6 +74,7 @@ public class ButtonAndAnimationManager : MonoBehaviour
         smallgame.gameObject.SetActive(true);
         chat.gameObject.SetActive(true);
         mainButton.gameObject.SetActive(true);
+        fucBack.gameObject.SetActive(true);
 
     }
 }
