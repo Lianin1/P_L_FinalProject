@@ -222,7 +222,7 @@ public class MiniGameManager : MonoBehaviour
         minigameopen.gameObject.SetActive(true);
         fucBack.gameObject.SetActive(true);
 
-        Application.Quit();
+
         HIdeAllUI();
     }
 

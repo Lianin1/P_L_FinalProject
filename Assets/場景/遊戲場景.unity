@@ -11048,8 +11048,8 @@ MonoBehaviour:
   buttonClickSound: {fileID: 8300000, guid: 7a4c4b5d7ffae4646b53e27c39ffc487, type: 3}
   muteClickSound: {fileID: 8300000, guid: 0db8862b7fe5bfa449b0f993e1fff825, type: 3}
   unmuteClickSound: {fileID: 8300000, guid: c230389cdba1a4d47bda71c4d0e2b6f9, type: 3}
-  opening: {fileID: 8300000, guid: 2e1c0edfc97324f3cbdc4ed5f343753b, type: 3}
-  start: {fileID: 8300000, guid: c155828b70c1b4c8bab378079dc99c56, type: 3}
+  opening: {fileID: 8300000, guid: e4023f88d0da5484e800df7164639bef, type: 3}
+  start: {fileID: 8300000, guid: 0b5de865586844050b285d4a3fd6b033, type: 3}
 --- !u!1001 &1871679525
 PrefabInstance:
   m_ObjectHideFlags: 0
